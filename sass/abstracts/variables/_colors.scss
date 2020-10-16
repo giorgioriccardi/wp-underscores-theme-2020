@@ -6,15 +6,48 @@ $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
+$color__text-input: #666666;
 $color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+$color__link: #666666; //lightgray
+$color__link-visited: #333333; //darkgray
+$color__link-hover: #ffcc33; //yellow
+$color__text-main: #666666;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+// ssws
+$color__site-main: #ffcc33; //yellow
+$color__text-heading: #333333; //darkgray
+$color__debug: #ff0000; //red
+
+body {
+  color: $color__text-main;
+
+  ::selection {
+    color: $color__text-heading;
+    background-color: $color__site-main;
+  }
+}
+
+// headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color__text-heading;
+}
+
+// links
+a {
+  color: $color__text-main;
+
+  &:hover {
+    color: $color__site-main;
+  }
+}
