@@ -16,6 +16,10 @@ wp-cli.local.yml
 sitemap.xml
 sitemap.xml.gz
 
+# _s #
+############
+vendor/
+
 # Avoid accidental modification of pantheon.upstream.yml in sites
 # created from this upstream
 pantheon.upstream.yml
