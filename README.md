@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-# wp-underscores-theme-2020
+# WordPress \_s October 2020
 
 WordPress Custom Theme based on \_s October 2020
+
+_wp-underscores-theme-2020_
 
 ===
 
