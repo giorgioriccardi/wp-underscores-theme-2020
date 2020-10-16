@@ -1,0 +1,56 @@
+node_modules
+.tmp
+.env
+
+# Files injected by scripts:
+.babelrc
+.eslintrc
+.editorconfig
+.sass-lint.yml
+.pre-commit-config.yaml
+
+# WordPress #
+############
+wp-config-local.php
+wp-cli.local.yml
+sitemap.xml
+sitemap.xml.gz
+
+# Avoid accidental modification of pantheon.upstream.yml in sites
+# created from this upstream
+pantheon.upstream.yml
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
