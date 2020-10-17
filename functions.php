@@ -83,6 +83,7 @@ if (!function_exists('latitude51_setup')) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__('Primary', 'latitude51'),
+				'menu-2' => esc_html__('Footer', 'latitude51'),
 			)
 		);
 

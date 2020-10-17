@@ -707,6 +707,13 @@ textarea {
 	text-decoration: none;
 }
 
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+	color: #ffcc33;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -745,6 +752,40 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+/* SSWS Footer Menu */
+footer a {
+	color: #ffcc33 !important;
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: #333333 !important;
+	text-decoration: underline;
+}
+
+footer .reset-list-style,
+footer .reset-list-style ul,
+footer .reset-list-style ol {
+	list-style: none;
+	margin: 0;
+}
+
+footer .reset-list-style li {
+	margin: 0;
+	float: left;
+}
+
+footer .reset-list-style li:before {
+	content: "\007c";
+	display: inline-block;
+	margin: 0 0.3em;
+}
+
+footer .reset-list-style li:first-child:before {
+	content: "";
+	display: none;
 }
 
 /* Posts and pages
