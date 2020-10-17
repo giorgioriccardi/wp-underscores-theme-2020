@@ -34,7 +34,6 @@
 
         <a href="<?php echo esc_url(__('https://sosmediacorp.com/', 'latitude51')); ?>">
             <?php
-			/* translators: 1: Theme name, 2: Theme author. */
 			printf(esc_html__('Edmonton Web Design & Development'), 'latitude51');
 			?>
         </a>
