@@ -148,6 +148,16 @@ add_action('after_setup_theme', 'latitude51_setup');
 require get_template_directory() . '/classes/class-latitude51-svg-icons.php';
 require get_template_directory() . '/inc/svg-icons.php';
 
+// SSWS SVG support
+function latitude51_support_svg($file_types)
+{
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes);
+	return $file_types;
+}
+add_filter('upload_mimes', 'latitude51_support_svg');
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
