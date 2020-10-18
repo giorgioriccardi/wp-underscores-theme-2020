@@ -150,6 +150,16 @@ function latitude51_content_width()
 }
 add_action('after_setup_theme', 'latitude51_content_width', 0);
 
+// SSWS SVG support
+function latitude51_support_svg($file_types)
+{
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes);
+	return $file_types;
+}
+add_filter('upload_mimes', 'latitude51_support_svg');
+
 /**
  * Register widget area.
  *
