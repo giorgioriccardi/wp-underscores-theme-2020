@@ -657,8 +657,14 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+.site-header {
+	display: flex;
+	background-color: #fff;
+}
+
 .main-navigation {
-	display: block;
+	display: flex;
+	justify-content: flex-end;
 	width: 100%;
 }
 

@@ -1,5 +1,12 @@
+.site-header {
+  display: flex;
+  background-color: $color__background-body;
+}
+
 .main-navigation {
-  display: block;
+  //   display: block;
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
 
   ul {

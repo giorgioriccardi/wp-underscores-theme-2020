@@ -156,7 +156,7 @@ add_filter('upload_mimes', 'latitude51_support_svg');
  */
 function latitude51_content_width()
 {
-	$GLOBALS['content_width'] = apply_filters('latitude51_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('latitude51_content_width', 560);
 }
 add_action('after_setup_theme', 'latitude51_content_width', 0);
 
