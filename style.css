@@ -850,6 +850,10 @@ footer .reset-list-style li:first-child:before {
 	display: inline-block;
 }
 
+.custom-logo {
+	min-width: 120px;
+}
+
 /* Captions
 --------------------------------------------- */
 .wp-caption {

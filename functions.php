@@ -137,6 +137,16 @@ if (!function_exists('latitude51_setup')) :
 endif;
 add_action('after_setup_theme', 'latitude51_setup');
 
+// SSWS SVG support
+function latitude51_support_svg($file_types)
+{
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes);
+	return $file_types;
+}
+add_filter('upload_mimes', 'latitude51_support_svg');
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -149,16 +159,6 @@ function latitude51_content_width()
 	$GLOBALS['content_width'] = apply_filters('latitude51_content_width', 640);
 }
 add_action('after_setup_theme', 'latitude51_content_width', 0);
-
-// SSWS SVG support
-function latitude51_support_svg($file_types)
-{
-	$new_filetypes = array();
-	$new_filetypes['svg'] = 'image/svg+xml';
-	$file_types = array_merge($file_types, $new_filetypes);
-	return $file_types;
-}
-add_filter('upload_mimes', 'latitude51_support_svg');
 
 /**
  * Register widget area.
