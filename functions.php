@@ -138,6 +138,17 @@ endif;
 add_action('after_setup_theme', 'latitude51_setup');
 
 /**
+ * SSWS2020
+ * REQUIRED FILES
+ * Include required files.
+ */
+
+// Handle SVG icons.
+// Based on a solution in TwentyTwenty
+require get_template_directory() . '/classes/class-latitude51-svg-icons.php';
+require get_template_directory() . '/inc/svg-icons.php';
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
