@@ -922,6 +922,10 @@ article {
 	}
 }
 
+.entry-title {
+	display: none;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {

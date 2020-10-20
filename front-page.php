@@ -48,7 +48,8 @@ get_header();
 
 		endwhile;
 
-		the_posts_navigation();
+		// SSWS no need for post nav on front-page
+		// the_posts_navigation();
 
 	else :
 
