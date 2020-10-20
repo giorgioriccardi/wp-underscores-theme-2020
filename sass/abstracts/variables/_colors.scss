@@ -1,3 +1,4 @@
+$color__background-html: #f0f0f0;
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -24,8 +25,13 @@ $color__site-main: #ffcc33; //yellow
 $color__text-heading: #333333; //darkgray
 $color__debug: #ff0000; //red
 
+html {
+  background-color: $color__background-html;
+}
+
 body {
   color: $color__text-main;
+  background-color: $color__background-body;
 
   ::selection {
     color: $color__text-heading;
