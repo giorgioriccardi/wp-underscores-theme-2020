@@ -14,13 +14,14 @@
  */
 
 (function( $ ) {
+	// alert("jQuery works!");
 	var masthead, menuToggle, siteNavContain, siteNavigation;
 
 	function initMainNavigation( container ) {
 
 		// Add dropdown toggle that displays child menu items.
-		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( latitude51ScreenReaderText.icon )
+		var dropdownToggle = $( '<button />', { 'class': 'menu-toggle', 'aria-expanded': false })
+		.append( $( '<span />', { 'class': 'dropdown-symbol', text: 'o' }) )
 			.append( $( '<span />', { 'class': 'screen-reader-text', text: latitude51ScreenReaderText.expand }) );
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
@@ -32,11 +33,13 @@
 			.find( '.screen-reader-text' )
 			.text( latitude51ScreenReaderText.collapse );
 		// Set the active submenu initial state.
-		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+		// container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
 
-		container.find( '.dropdown-toggle' ).click( function( e ) {
+		container.find( '.menu-toggle' ).click( function( e ) {
 			var _this = $( this ),
 				screenReaderSpan = _this.find( '.screen-reader-text' );
+				dropdownSymbol = _this.find( '.dropdown-symbol' );
+				dropdownSymbol.text( dropdownSymbol.text() === 'x' ? 'o' : 'x' );
 
 			e.preventDefault();
 			_this.toggleClass( 'toggled-on' );
