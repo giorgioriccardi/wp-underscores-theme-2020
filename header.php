@@ -53,7 +53,7 @@
 
             <nav id="site-navigation" class="debug main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu"
-                    aria-expanded="false"><?php esc_html_e('Menu', 'latitude51'); ?></button>
+                    aria-expanded="false"><?php esc_html_e('', 'latitude51'); ?></button>
                 <?php
 				wp_nav_menu(
 					array(
