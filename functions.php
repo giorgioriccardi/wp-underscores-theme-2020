@@ -83,7 +83,7 @@ if (!function_exists('latitude51_setup')) :
 		register_nav_menus(
 			array(
 				'primary' => esc_html__('Primary', 'latitude51'),
-				'mobile' => esc_html__('Mobile', 'latitude51'),
+				// 'mobile' => esc_html__('Mobile', 'latitude51'),
 				'footer' => esc_html__('Footer', 'latitude51'),
 			)
 		);
@@ -128,8 +128,8 @@ if (!function_exists('latitude51_setup')) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 60,
+				'width'       => 120,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)

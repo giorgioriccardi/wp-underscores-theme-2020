@@ -33,16 +33,48 @@ get_header();
 				<pre class="debug">Hero Section</pre>
 			</code>
 
-    <hr>
-    <code>
-				<pre class="debug">Services Section</pre></code>
-
     <?php
 		endif;
 
 		/* Start the Loop */
 		while (have_posts()) :
 			the_post();
+
+			/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+			get_template_part('template-parts/content', get_post_type());
+		// get_template_part('template-parts/blocks/content', 'hero');
+
+		endwhile;
+
+		the_posts_navigation();
+
+	else :
+
+		get_template_part('template-parts/content', 'none');
+
+	endif;
+	?>
+
+    <code>
+				<pre class="debug">Services Section</pre></code>
+
+    <?php
+	// SSWS
+    $the_query = new WP_Query( array(
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    // other args here
+    ) );
+
+    if ($the_query->have_posts()) :
+
+		/* Start the Loop */
+		while ($the_query->have_posts()) :
+			$the_query->the_post();
 
 			/*
 				 * Include the Post-Type-specific template for the content.
