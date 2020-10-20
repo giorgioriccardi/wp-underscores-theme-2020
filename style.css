@@ -692,7 +692,7 @@ textarea {
 .main-navigation ul {
 	display: none;
 	list-style: none;
-	margin: 1em 0 0 0;
+	margin: 1.5em 0 0 0;
 	padding-left: 0;
 }
 
@@ -725,6 +725,12 @@ textarea {
 	left: auto;
 }
 
+@media screen and (min-width: 787px) {
+	.main-navigation ul {
+		margin: 1em 0 0 0;
+	}
+}
+
 .main-navigation li {
 	position: relative;
 	margin-right: 1.7em;
@@ -751,18 +757,37 @@ textarea {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-	color: #ffcc33;
+	color: #ffcc33 !important;
 }
 
 .main-navigation.toggled {
-	background-color: white;
-	z-index: 2 !important;
-	height: 20vh;
+	background-color: #f0f0f0;
+	z-index: 2;
+	height: 100vh;
 	min-height: 12em;
+	transition: all 0.5s ease;
 }
 
 .main-navigation.toggled .menu-main-menu-container {
 	padding: 2em;
+}
+
+.main-navigation.toggled .menu-toggle {
+	display: flex;
+	margin-top: 2em;
+	padding-right: 2em;
+}
+
+.main-navigation.toggled li {
+	margin-bottom: 1.5em;
+}
+
+.main-navigation.toggled li a:hover {
+	color: #ffcc33;
+}
+
+.main-navigation.toggled li a:focus {
+	color: #333333;
 }
 
 /* Small menu. */

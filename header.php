@@ -51,9 +51,7 @@
                 <?php endif; ?>
             </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="debug main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu"
-                    aria-expanded="false"><?php esc_html_e('', 'latitude51'); ?></button>
+            <nav id="site-navigation" class="main-navigation">
                 <?php
 				wp_nav_menu(
 					array(
@@ -62,5 +60,7 @@
 					)
 				);
 				?>
+                <button class="menu-toggle" aria-controls="primary-menu"
+                    aria-expanded="false"><?php esc_html_e('', 'latitude51'); ?></button>
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
