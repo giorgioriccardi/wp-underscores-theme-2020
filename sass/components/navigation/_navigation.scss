@@ -90,8 +90,20 @@
   }
 }
 
-.menu-main-menu-container {
-  background: red;
+// Mobile toggled view
+.main-navigation {
+  &.toggled {
+    // background-color: $color__transparent;
+    background-color: rgba(255, 255, 255, 1);
+    // border: green   solid; // debug
+    z-index: 2 !important;
+    height: 20vh;
+    min-height: 12em;
+
+    .menu-main-menu-container {
+      padding: 2em;
+    }
+  }
 }
 
 /* Small menu. */

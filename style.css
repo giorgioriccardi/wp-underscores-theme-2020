@@ -754,8 +754,15 @@ textarea {
 	color: #ffcc33;
 }
 
-.menu-main-menu-container {
-	background: red;
+.main-navigation.toggled {
+	background-color: white;
+	z-index: 2 !important;
+	height: 20vh;
+	min-height: 12em;
+}
+
+.main-navigation.toggled .menu-main-menu-container {
+	padding: 2em;
 }
 
 /* Small menu. */

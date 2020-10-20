@@ -220,7 +220,7 @@ function latitude51_scripts()
 	wp_enqueue_style('latitude51-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('latitude51-style', 'rtl', 'replace');
 
-	wp_enqueue_script('latitude51-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('latitude51-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');

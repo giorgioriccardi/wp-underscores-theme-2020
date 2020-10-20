@@ -17,9 +17,6 @@ get_header();
 
 <main id="primary" class="site-main">
 
-    <code>
-		<pre class="debug">front-page.php The front page template file</pre></code>
-
     <!-- SSWS: just render the page template content, which includes the Hero Blocks -->
     <?php
 	if (have_posts()) :

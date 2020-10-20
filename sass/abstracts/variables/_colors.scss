@@ -24,6 +24,7 @@ $color__border-abbr: #666;
 $color__site-main: #ffcc33; //yellow
 $color__text-heading: #333333; //darkgray
 $color__debug: #ff0000; //red
+$color__transparent: rgba(255, 255, 255, 0);
 
 html {
   background-color: $color__background-html;
