@@ -10,7 +10,7 @@ textarea {
   @include font-size(0.9); // scale down to 16px on smaller screens
   line-height: $font__line-height-body;
 
-  @media screen and (min-width: 787px) {
+  @media screen and (min-width: $mediaQuery__small) {
     @include font-size(1); // default to 18px on larger screens
   }
 }

@@ -838,6 +838,16 @@ footer .reset-list-style li:first-child:before {
 	margin: 0 0 1.5em;
 }
 
+article {
+	padding: 1em;
+}
+
+@media screen and (min-width: 787px) {
+	article {
+		padding: 2em;
+	}
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
