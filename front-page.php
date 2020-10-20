@@ -20,6 +20,7 @@ get_header();
     <code>
 		<pre class="debug">front-page.php The front page template file</pre></code>
 
+    <!-- SSWS: just render the page template content, which includes the Hero Blocks -->
     <?php
 	if (have_posts()) :
 
@@ -46,7 +47,7 @@ get_header();
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
 			get_template_part('template-parts/content', get_post_type());
-		// get_template_part('template-parts/blocks/content', 'hero');
+			// get_template_part('template-parts/blocks/content', 'hero');
 
 		endwhile;
 
@@ -59,15 +60,19 @@ get_header();
 	endif;
 	?>
 
+    <!-- SSWS: render the news posts -->
     <code>
 				<pre class="debug">Services Section</pre></code>
 
     <?php
 	// SSWS
     $the_query = new WP_Query( array(
-    'post_type' => 'post',
-    'posts_per_page' => 3,
-    // other args here
+    'post_type'			=> 'post',
+    'posts_per_page'	=> 3,
+    'post_status'		=> 'publish',
+	'cat'				=> '196,20', // news #196, events #20 // this does not show posts from any children of these categories)
+	// 'page_name'			=> 'news-events',
+	// others parameters here: https://developer.wordpress.org/reference/classes/wp_query/
     ) );
 
     if ($the_query->have_posts()) :

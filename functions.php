@@ -147,6 +147,36 @@ function latitude51_support_svg($file_types)
 	return $file_types;
 }
 add_filter('upload_mimes', 'latitude51_support_svg');
+// end SSWS SVG support
+
+// SSWS ACF BLOCKS
+
+// ver 2.0
+/**
+ * Register hero block
+ * https://www.advancedcustomfields.com/resources/acf_register_block_type/
+ */
+add_action('acf/init', 'hero');
+function hero()
+{
+	// check function exists
+	if (function_exists('acf_register_block')) {
+
+		// register a hero block
+		acf_register_block(array(
+			'name'              => 'hero',
+			'title'             => __('Hero Content'),
+			'description'       => __('Hero ACF Block: img bg with text & CTA.'),
+			// 'render_callback'   => 'latitude51_acf_hero_render_callback', // stored at the bottom of functions.php, just for reference
+			'render_template'   => 'template-parts/blocks/content-hero.php',
+			'category'          => 'formatting',
+			'icon'              => 'format-image',
+			'mode'              => 'preview',
+			'keywords'          => array('hero', 'image'),
+		));
+	}
+}
+// end SSWS ACF BLOCKS
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -225,31 +255,9 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// SSWS ACF BLOCKS
-// ver 2.0
-/**
- * Register hero block
- * https://www.advancedcustomfields.com/resources/acf_register_block_type/
- */
-add_action('acf/init', 'hero');
-function hero()
-{
-	// check function exists
-	if (function_exists('acf_register_block')) {
-
-		// register a hero block
-		acf_register_block(array(
-			'name'              => 'hero',
-			'title'             => __('Hero Content'),
-			'description'       => __('Hero ACF Block: img bg with text & CTA.'),
-			'render_callback'   => 'latitude51_acf_hero_render_callback',
-			'category'          => 'formatting',
-			'icon'              => 'format-image',
-			'mode'              => 'preview',
-			'keywords'          => array('hero', 'image'),
-		));
-	}
-}
+// SSWS
+// The ACF Hero render callback function has been moved into template-parts/blocks/content-hero.php
+// via 'render_template' => 'template-parts/blocks/content-hero.php',
 
 /**
  *  This is the callback that displays the hero block
@@ -258,41 +266,42 @@ function hero()
  * @param   string $content The block content (emtpy string).
  * @param   bool $is_preview True during AJAX preview.
  */
-function latitude51_acf_hero_render_callback($block, $content = '', $is_preview = false)
-{
-	// create id attribute for specific styling
-	$id = 'hero-' . $block['id'];
 
-	// create align class ("alignwide") from block setting ("wide")
-	$align_class = $block['align'] ? 'align' . $block['align'] : '';
+// function latitude51_acf_hero_render_callback($block, $content = '', $is_preview = false)
+// {
+// 	// create id attribute for specific styling
+// 	$id = 'hero-' . $block['id'];
 
-	// ACF field variables
-	$hero_image = get_field('hero_image');
-	$title = get_field('title');
-	$content = get_field('content');
-	$cta_link = get_field('link');
-	?>
+// 	// create align class ("alignwide") from block setting ("wide")
+// 	$align_class = $block['align'] ? 'align' . $block['align'] : '';
 
-<section id="<?php echo $id; ?>" class="hero-wrapper <?php echo $align_class; ?> latitude51-<?php echo $id; ?>"
-    style="background-image: url(<?php echo $hero_image; ?>);">
+// 	// ACF field variables
+// 	$hero_image = get_field('hero_image');
+// 	$title = get_field('title');
+// 	$content = get_field('content');
+// 	$cta_link = get_field('link');
+// 	?>
 
-    <!-- Hero Section Title -->
-    <?php if ($title) : ?>
-    <h2><?php echo $title; ?></h2>
-    <?php endif; ?>
+<!-- <section id="<?php echo $id; ?>" class="hero-wrapper <?php echo $align_class; ?> latitude51-<?php echo $id; ?>" style="background-image: url(<?php echo $hero_image; ?>);"> -->
 
-    <!-- Hero Section Content -->
-    <?php if ($content) : ?>
-    <div class="hero-content-wrapper">
+<!-- Hero Section Title -->
+<?php if ($title) : ?>
+<!-- <h2><?php echo $title; ?></h2> -->
+<?php endif; ?>
+
+<!-- Hero Section Content -->
+<?php if ($content) : ?>
+<!-- <div class="hero-content-wrapper">
         <p><?php echo $content; ?></p>
-    </div>
-    <?php endif; ?>
+    </div> -->
+<?php endif; ?>
 
-    <!-- Hero Section CTA -->
-    <?php if ($cta_link) : ?>
-    <button class="cta-btn"><a class="cta-link" href="<?php echo $cta_link['url']; ?>"
-            target="<?php echo $cta_link['target']; ?>"><?php echo $cta_link['title']; ?></a></button>
-    <?php endif; ?>
-</section>
+<!-- Hero Section CTA -->
+<?php if ($cta_link) : ?>
+<!-- <button class="cta-btn"><a class="cta-link" href="<?php echo $cta_link['url']; ?>" target="<?php echo $cta_link['target']; ?>"><?php echo $cta_link['title']; ?></a></button> -->
+<?php endif; ?>
+<!-- </section> -->
+
 <?php
-}
+// }
+// end SSWS ACF BLOCKS render callback function
