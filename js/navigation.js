@@ -4,6 +4,8 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
+
+// SSWS Original _s
 // ( function() {
 // 	const siteNavigation = document.getElementById( 'site-navigation' );
 
@@ -97,6 +99,7 @@
 // 		}
 // 	}
 // }() );
+// end SSWS Original _s
 
 
 // SSWS 2020
@@ -654,7 +657,7 @@ function latitude51DomReady( fn ) {
 latitude51DomReady( function() {
 	latitude51.toggles.init();              // Handle toggles.
 	latitude51.coverModals.init();          // Handle cover modals.
-	latitude51.intrinsicRatioVideos.init(); // Retain aspect ratio of videos on window resize.
+	// latitude51.intrinsicRatioVideos.init(); // Retain aspect ratio of videos on window resize.
 	latitude51.modalMenu.init();            // Modal Menu.
 	latitude51.primaryMenu.init();          // Primary Menu.
 	latitude51.touchEnabled.init();         // Add class to body if device is touch-enabled.
