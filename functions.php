@@ -82,8 +82,9 @@ if (!function_exists('latitude51_setup')) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__('Primary', 'latitude51'),
-				'menu-2' => esc_html__('Footer', 'latitude51'),
+				'primary' => esc_html__('Primary', 'latitude51'),
+				'mobile' => esc_html__('Mobile', 'latitude51'),
+				'footer' => esc_html__('Footer', 'latitude51'),
 			)
 		);
 
