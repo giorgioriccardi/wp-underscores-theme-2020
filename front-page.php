@@ -18,20 +18,21 @@ get_header();
 <main id="primary" class="site-main">
 
     <!-- SSWS: just render the page template content, which includes the Hero Blocks -->
-    <?php
+    <div class="hero-main-container debug">
+        <?php
 	if (have_posts()) :
 
 		if (is_home() && !is_front_page()) :
 	?>
-    <header>
-        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-    </header>
+        <header>
+            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+        </header>
 
-    <code>
+        <code>
 				<pre class="debug">Hero Section</pre>
 			</code>
 
-    <?php
+        <?php
 		endif;
 
 		/* Start the Loop */
@@ -57,12 +58,12 @@ get_header();
 
 	endif;
 	?>
+    </div><!-- end hero-wrapper -->
 
     <!-- SSWS: render the news posts -->
-    <code>
-				<pre class="debug">Services Section</pre></code>
+    <div class="content-wrapper">
 
-    <?php
+        <?php
 	// SSWS
     $the_query = new WP_Query( array(
     'post_type'			=> 'post',
@@ -97,6 +98,7 @@ get_header();
 
 	endif;
 	?>
+    </div><!-- end .content-wrapper -->
 
 </main><!-- #main -->
 

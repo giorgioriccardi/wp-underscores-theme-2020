@@ -114,7 +114,7 @@
 
     .menu-toggle {
       display: flex;
-      margin-top: 2em;
+      margin-top: 1em;
       padding-right: 2em;
     }
 
@@ -142,6 +142,7 @@
     content: "\2261"; // cheeseburger menu
     font-size: 1.5em;
     color: $color__link;
+    padding-right: 0.5em;
   }
 
   &:hover::before {

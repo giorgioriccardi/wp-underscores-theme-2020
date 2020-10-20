@@ -774,7 +774,7 @@ textarea {
 
 .main-navigation.toggled .menu-toggle {
 	display: flex;
-	margin-top: 2em;
+	margin-top: 1em;
 	padding-right: 2em;
 }
 
@@ -799,6 +799,7 @@ textarea {
 	content: "\2261";
 	font-size: 1.5em;
 	color: #666666;
+	padding-right: 0.5em;
 }
 
 .menu-toggle:hover::before {
@@ -912,18 +913,30 @@ footer .reset-list-style li:first-child:before {
 	margin: 0 0 1.5em;
 }
 
-article {
-	padding: 1em;
-}
-
-@media screen and (min-width: 787px) {
-	article {
-		padding: 2em;
-	}
-}
-
 .entry-title {
 	display: none;
+}
+
+/* Hero section
+--------------------------------------------- */
+.hero-main-container article a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.hero-main-container article h2 {
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.hero-main-container article .cta-btn {
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px solid white;
+	border-radius: 0;
 }
 
 /* Comments

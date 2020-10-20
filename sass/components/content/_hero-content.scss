@@ -1,0 +1,29 @@
+.hero-main-container {
+  article {
+    // padding: 1em;
+    // @media screen and (min-width: $mediaQuery__small) {
+    //   padding: 2em;
+    // }
+
+    a {
+      text-decoration: none;
+      color: $color__background-body;
+    }
+
+    h2 {
+      font-family: $font__secondary; // Oswald
+      color: $color__background-body;
+      text-transform: uppercase;
+      // background-color: pink; // debug
+    }
+
+    .cta-btn {
+      font-family: $font__secondary; // Oswald
+      color: $color__background-body;
+      text-transform: uppercase;
+      background-color: $color__transparent;
+      border: 2px solid white;
+      border-radius: 0;
+    }
+  }
+}
