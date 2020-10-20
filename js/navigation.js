@@ -101,17 +101,3 @@
 }() );
 // end SSWS Original _s
 
-// ssws debug
-(function( $ ) {
-	// alert('test');
-	var toggle  = document.getElementsByClassName("menu-toggle");
-	var content = document.getElementById("primary-menu");
-	
-	$(document).ready(function(){
-	  $("#toggle").click(function(){
-		$("#content").fadeToggle("slow");
-	  	$(".menu-main-menu-container").fadeOut(5000);
-	  });
-	});
-})( jQuery );
-
