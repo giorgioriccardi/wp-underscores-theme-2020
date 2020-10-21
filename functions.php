@@ -49,9 +49,27 @@ if (!function_exists('latitude51_setup')) :
 		 */
 		add_theme_support('post-thumbnails');
 
-		// ssws2020
+		// SSWS2020
 		// Set post thumbnail size.
-		set_post_thumbnail_size(1200, 9999);
+		set_post_thumbnail_size(650, 453);
+
+		// SSWS
+		// Replace the excerpt [...] with "Read More" btn
+		function latitude51_excerpt_more($more) {
+			global $post;
+		return '<div><button><a class="moretag" href="'. get_permalink($post->ID) . '">' . esc_html__( 'Read more', 'latitude51' ) . '</a></button></div>';
+		}
+		add_filter('excerpt_more', 'latitude51_excerpt_more');
+		/**
+		 * Filter the except length to 40 words.
+		 *
+		 * @param int $length Excerpt length.
+		 * @return int (Maybe) modified excerpt length.
+		 */
+		function wpdocs_custom_excerpt_length( $length ) {
+			return 30;
+		}
+		add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 		// Add custom image size used in Cover Template.
 		add_image_size('latitude51-fullscreen', 1980, 9999);

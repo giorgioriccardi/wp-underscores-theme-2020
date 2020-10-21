@@ -59,4 +59,22 @@ hr.cat-title {
   max-width: 1300px;
   margin: 0 auto;
   background-color: $color__background-white;
+
+  article {
+    &.post {
+      display: flex;
+      flex-direction: row;
+
+      &:nth-of-type(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .content-box {
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      padding: 3em;
+    }
+  }
 }

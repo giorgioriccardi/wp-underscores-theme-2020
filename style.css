@@ -954,6 +954,22 @@ hr.cat-title {
 	background-color: #ffffff;
 }
 
+.content-wrapper article.post {
+	display: flex;
+	flex-direction: row;
+}
+
+.content-wrapper article.post:nth-of-type(odd) {
+	flex-direction: row-reverse;
+}
+
+.content-wrapper article .content-box {
+	max-width: 650px;
+	display: flex;
+	flex-direction: column;
+	padding: 3em;
+}
+
 /* Hero section
 --------------------------------------------- */
 .hero-main-container article {
