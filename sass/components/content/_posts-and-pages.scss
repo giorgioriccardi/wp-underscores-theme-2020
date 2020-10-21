@@ -127,6 +127,39 @@ hr.cat-title {
       }
     }
   }
+
+  @media screen and (max-width: $mediaQuery__medium) {
+    .content-wrapper {
+      padding-bottom: 0em;
+    }
+
+    article {
+      &.post {
+        display: flex;
+        flex-direction: column;
+        max-height: inherit;
+
+        &:nth-of-type(odd) {
+          flex-direction: column;
+        }
+        box-shadow: none;
+        margin-bottom: 0em;
+      }
+
+      .content-box {
+        display: flex;
+        // flex-direction: row;
+        max-width: inherit;
+        padding: 3em;
+      }
+
+      .post-thumbnail {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 // SSWS
