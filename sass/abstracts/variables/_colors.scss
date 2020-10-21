@@ -1,4 +1,6 @@
-$color__background-body: #fff;
+$color__background-html: #f0f0f0;
+$color__background-body: #f0f0f0;
+$color__background-white: #ffffff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -8,10 +10,12 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666666;
 $color__text-input-focus: #111;
-$color__link: #666666; //lightgray
+$color__link: #666666; //gray
+$color__nav-link: #999999; //lightgray
 $color__link-visited: #333333; //darkgray
 $color__link-hover: #ffcc33; //yellow
 $color__text-main: #666666;
+$color__text-white: #ffffff;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -23,9 +27,15 @@ $color__border-abbr: #666;
 $color__site-main: #ffcc33; //yellow
 $color__text-heading: #333333; //darkgray
 $color__debug: #ff0000; //red
+$color__transparent: rgba(255, 255, 255, 0);
+
+html {
+  background-color: $color__background-html;
+}
 
 body {
   color: $color__text-main;
+  background-color: $color__background-body;
 
   ::selection {
     color: $color__text-heading;

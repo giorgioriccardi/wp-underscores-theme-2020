@@ -17,25 +17,10 @@ get_header();
 
 <main id="primary" class="site-main">
 
-    <code>
-		<pre class="debug">front-page.php The front page template file</pre></code>
-
     <!-- SSWS: just render the page template content, which includes the Hero Blocks -->
-    <?php
+    <div class="hero-main-container">
+        <?php
 	if (have_posts()) :
-
-		if (is_home() && !is_front_page()) :
-	?>
-    <header>
-        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-    </header>
-
-    <code>
-				<pre class="debug">Hero Section</pre>
-			</code>
-
-    <?php
-		endif;
 
 		/* Start the Loop */
 		while (have_posts()) :
@@ -51,7 +36,8 @@ get_header();
 
 		endwhile;
 
-		the_posts_navigation();
+		// SSWS no need for post nav on front-page
+		// the_posts_navigation();
 
 	else :
 
@@ -59,12 +45,17 @@ get_header();
 
 	endif;
 	?>
+    </div><!-- end hero-wrapper -->
 
     <!-- SSWS: render the news posts -->
-    <code>
-				<pre class="debug">Services Section</pre></code>
+    <div class="fp-cat-title">
+        <h1>News & Events</h1>
+        <hr class="cat-title">
+    </div>
 
-    <?php
+    <div class="content-wrapper">
+
+        <?php
 	// SSWS
     $the_query = new WP_Query( array(
     'post_type'			=> 'post',
@@ -87,7 +78,6 @@ get_header();
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
 			get_template_part('template-parts/content', get_post_type());
-		// get_template_part('template-parts/blocks/content', 'hero');
 
 		endwhile;
 
@@ -99,6 +89,7 @@ get_header();
 
 	endif;
 	?>
+    </div><!-- end .content-wrapper -->
 
 </main><!-- #main -->
 

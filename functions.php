@@ -49,9 +49,27 @@ if (!function_exists('latitude51_setup')) :
 		 */
 		add_theme_support('post-thumbnails');
 
-		// ssws2020
+		// SSWS2020
 		// Set post thumbnail size.
-		set_post_thumbnail_size(1200, 9999);
+		set_post_thumbnail_size(650, 453);
+
+		// SSWS
+		// Replace the excerpt [...] with "Read More" btn
+		function latitude51_excerpt_more($more) {
+			global $post;
+		return '<div><button><a class="moretag" href="'. get_permalink($post->ID) . '">' . esc_html__( 'Read more', 'latitude51' ) . '</a></button></div>';
+		}
+		add_filter('excerpt_more', 'latitude51_excerpt_more');
+		/**
+		 * Filter the except length to 40 words.
+		 *
+		 * @param int $length Excerpt length.
+		 * @return int (Maybe) modified excerpt length.
+		 */
+		function wpdocs_custom_excerpt_length( $length ) {
+			return 30;
+		}
+		add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 		// Add custom image size used in Cover Template.
 		add_image_size('latitude51-fullscreen', 1980, 9999);
@@ -178,6 +196,22 @@ function hero()
 }
 // end SSWS ACF BLOCKS
 
+// SSWS ACF callback
+// The ACF Hero render callback function has been moved into template-parts/blocks/content-hero.php
+// via 'render_template' => 'template-parts/blocks/content-hero.php',
+
+/**
+ *  This is the callback that displays the hero block
+ *
+ * @param   array $block The block settings and attributes.
+ * @param   string $content The block content (emtpy string).
+ * @param   bool $is_preview True during AJAX preview.
+ */
+
+// function latitude51_acf_hero_render_callback($block, $content = '', $is_preview = false) {}
+// function logic is in template-parts/blocks/content-hero.php
+// end SSWS ACF callback
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -220,7 +254,10 @@ function latitude51_scripts()
 	wp_enqueue_style('latitude51-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('latitude51-style', 'rtl', 'replace');
 
-	wp_enqueue_script('latitude51-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('latitude51-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true);
+
+	// SSWS Google Fonts: Oswald / Roboto
+	wp_enqueue_style( 'latitude51-fonts', 'https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap|Roboto:wght@400;700;900&display=swap' );
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');

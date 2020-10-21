@@ -4,10 +4,15 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	font-size: 1rem;
-	line-height: $font__line-height-body;
+  color: $color__text-main;
+  font-family: $font__main;
+  // font-size: 1rem;
+  @include font-size(0.9); // scale down to 16px on smaller screens
+  line-height: $font__line-height-body;
+
+  @media screen and (min-width: $mediaQuery__small) {
+    @include font-size(1); // default to 18px on larger screens
+  }
 }
 
 @import "headings";

@@ -1,23 +1,177 @@
 .sticky {
-	display: block;
+  display: block;
 }
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+  //   margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  //   margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+// FP News & Events
+.fp-cat-title {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-family: $font__secondary;
+  padding: 5.5em 0;
+  text-align: center;
+}
+
+.fp-cat-title h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+hr.cat-title {
+  background-color: $color__site-main;
+  height: 6px;
+  margin: 0 auto;
+  width: 8.2em;
+}
+
+@media screen and (max-width: $mediaQuery__small) {
+  .fp-cat-title {
+    padding: 3em 0;
+  }
+
+  .fp-cat-title h1 {
+    font-size: 2em;
+  }
+}
+
+.content-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-bottom: 3em;
+
+  article {
+    &.post {
+      display: flex;
+      flex-direction: row-reverse;
+      max-height: 433px;
+
+      &:nth-of-type(odd) {
+        flex-direction: row;
+      }
+      box-shadow: #fc3 8px 10px;
+      margin-bottom: 3em;
+    }
+
+    .content-box {
+      background-color: $color__background-white;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      padding: 3em;
+
+      .cat-btn {
+        background-color: black;
+        border-radius: 0;
+        font-size: small;
+        padding: 1em 0.7em;
+
+        a {
+          color: $color__text-white;
+          text-decoration: none;
+
+          &:hover {
+            color: $color__link-hover;
+          }
+        }
+      }
+
+      .entry-title {
+        font-family: $font__secondary; // Oswald
+        font-weight: normal;
+        margin: 0.3em 0;
+      }
+
+      .entry-meta {
+        * {
+          text-decoration: none;
+          color: $color__text-main;
+          font-size: small;
+        }
+      }
+
+      .moretag {
+        font-family: $font__secondary; // Oswald
+        font-weight: bold;
+        color: $color__text-white;
+        text-transform: uppercase;
+        background-color: $color__transparent;
+        border: 2px solid $color__border-dark-button;
+        border-radius: 0;
+        padding: 0.5em 1.5em;
+
+        .moretag-link {
+          text-decoration: none;
+          font-size: 0.85em;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mediaQuery__medium) {
+    .content-wrapper {
+      padding-bottom: 0em;
+    }
+
+    article {
+      &.post {
+        display: flex;
+        flex-direction: column;
+        max-height: inherit;
+
+        &:nth-of-type(odd) {
+          flex-direction: column;
+        }
+        box-shadow: none;
+        margin-bottom: 0em;
+      }
+
+      .content-box {
+        display: flex;
+        // flex-direction: row;
+        max-width: inherit;
+        padding: 3em;
+      }
+
+      .post-thumbnail {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// SSWS
+footer {
+  &#colophon {
+    text-align: center;
+    background: $color__background-white;
+    padding: 2em;
+    color: $color__nav-link;
+
+    * {
+      font-size: small;
+    }
+  }
 }

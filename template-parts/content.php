@@ -10,8 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
+    <div class="content-box">
+        <header class="entry-header">
+            <?php
+		
+		// SSWS btn for post category
+		$categories = get_the_category();
+		if ( ! empty( $categories ) ) {
+			echo '<div><button><a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a></button></div>';
+		}
+
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
@@ -20,20 +28,20 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
-				<?php
-				latitude51_posted_on();
+            <div class="entry-meta">
+                <?php
 				latitude51_posted_by();
+				latitude51_posted_on();
+				latitude51_entry_footer();
 				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+            </div><!-- .entry-meta -->
+            <?php endif; ?>
+        </header><!-- .entry-header -->
 
-	<?php latitude51_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
+        <div class="entry-content">
+            <?php
+		// the_content(
+		the_excerpt(
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -55,9 +63,12 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+        </div><!-- .entry-content -->
+    </div><!-- .content-box -->
 
-	<footer class="entry-footer">
-		<?php latitude51_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <?php latitude51_post_thumbnail(); ?>
+
+    <!-- <footer class="entry-footer"> -->
+    <?php // latitude51_entry_footer(); ?>
+    <!-- </footer>.entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

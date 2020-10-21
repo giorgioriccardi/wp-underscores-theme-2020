@@ -48,8 +48,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+html {
+	background-color: #f0f0f0;
+}
+
 body {
 	color: #666666;
+	background-color: #f0f0f0;
 }
 
 body ::selection {
@@ -414,9 +419,22 @@ select,
 optgroup,
 textarea {
 	color: #666666;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
+	font-family: "Roboto", Oswald, Ubuntu, "Helvetica Neue", sans-serif;
+	font-size: 16.2px;
+	font-size: 1.0125rem;
 	line-height: 1.5;
+}
+
+@media screen and (min-width: 786px) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
 }
 
 h1,
@@ -483,7 +501,9 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #fff;
+	background: #f0f0f0;
+	max-width: 1920px;
+	margin: 0 auto !important;
 }
 
 .debug {
@@ -659,7 +679,17 @@ textarea {
 --------------------------------------------- */
 .site-header {
 	display: flex;
-	background-color: #fff;
+	background-color: #ffffff;
+	min-height: 4.3em;
+}
+
+.site-header .site-branding {
+	margin: 0 2em;
+	padding: 10px 0;
+}
+
+.site-header .site-branding .custom-logo-link {
+	display: flex;
 }
 
 .main-navigation {
@@ -671,12 +701,11 @@ textarea {
 .main-navigation ul {
 	display: none;
 	list-style: none;
-	margin: 0;
+	margin: 2em 0 0 0;
 	padding-left: 0;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
 	top: 100%;
@@ -704,24 +733,98 @@ textarea {
 	left: auto;
 }
 
+@media screen and (min-width: 786px) {
+	.main-navigation ul {
+		margin: 1.5em 0 0 0;
+		line-height: 2;
+	}
+}
+
 .main-navigation li {
 	position: relative;
+	margin-right: 1.7em;
 }
 
 .main-navigation a {
+	color: #999999;
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	font-size: 0.8em;
+	font-weight: 600;
 	display: block;
 	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.main-navigation a:hover {
+	color: #ffcc33;
+}
+
+.main-navigation a:focus {
+	color: #333333;
 }
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+	color: #ffcc33 !important;
+}
+
+.main-navigation.toggled {
+	background-color: #f0f0f0;
+	z-index: 2;
+	height: 100vh;
+	min-height: 12em;
+	transition: all 0.5s ease;
+}
+
+.main-navigation.toggled .menu-main-menu-container {
+	padding: 2em;
+}
+
+.main-navigation.toggled .menu-toggle {
+	display: flex;
+	margin-top: 1.5em;
+	padding-right: 2em;
+}
+
+.main-navigation.toggled li {
+	margin-bottom: 1.5em;
+}
+
+.main-navigation.toggled li a:hover {
 	color: #ffcc33;
 }
 
+.main-navigation.toggled li a:focus {
+	color: #333333;
+}
+
 /* Small menu. */
-.menu-toggle,
+.menu-toggle {
+	display: block;
+}
+
+.menu-toggle[aria-expanded="false"]:before {
+	content: "\2261";
+	font-size: 1.5em;
+	color: #666666;
+	padding-right: 0.5em;
+}
+
+.menu-toggle:hover::before {
+	color: #ffcc33;
+}
+
+.menu-toggle[aria-expanded="true"]:before {
+	content: "\2715";
+}
+
+button.menu-toggle {
+	background: transparent;
+	border: none;
+}
+
 .main-navigation.toggled ul {
 	display: block;
 }
@@ -809,15 +912,214 @@ footer .reset-list-style li:first-child:before {
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.fp-cat-title {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	padding: 5.5em 0;
+	text-align: center;
+}
+
+.fp-cat-title h1 {
+	font-size: 2.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+hr.cat-title {
+	background-color: #ffcc33;
+	height: 6px;
+	margin: 0 auto;
+	width: 8.2em;
+}
+
+@media screen and (max-width: 786px) {
+	.fp-cat-title {
+		padding: 3em 0;
+	}
+	.fp-cat-title h1 {
+		font-size: 2em;
+	}
+}
+
+.content-wrapper {
+	max-width: 1300px;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+
+.content-wrapper article.post {
+	display: flex;
+	flex-direction: row;
+}
+
+.content-wrapper article.post:nth-of-type(odd) {
+	flex-direction: row-reverse;
+}
+
+.content-wrapper article .content-box {
+	max-width: 650px;
+	display: flex;
+	flex-direction: column;
+	padding: 3em;
+}
+
+/* Hero section
+--------------------------------------------- */
+.hero-main-container article {
+	margin: 0;
+}
+
+.hero-main-container article .entry-title {
+	display: none;
+}
+
+.hero-main-container article .entry-content {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.hero-main-container article .entry-content .hero-section {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode: multiply;
+}
+
+.hero-main-container article .entry-content .hero-section .hero-inner-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.hero-main-container article .entry-content .hero-section .hero-inner-container h2 {
+	font-size: 2.8em;
+	font-weight: bold;
+	margin: 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+	.hero-main-container article .entry-content .hero-section:not(:first-child) .hero-inner-container {
+		padding: 5em;
+		align-items: flex-start;
+	}
+	.hero-main-container article .entry-content .hero-section:not(:first-child) .hero-inner-container .hero-content-wrapper {
+		text-align: left;
+	}
+}
+
+.hero-main-container article .entry-content section:first-child {
+	width: 100%;
+	height: 100vh;
+	max-height: 750px;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-main-container article .entry-content section:first-child {
+		max-height: 500px;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.hero-main-container article .entry-content section:first-child {
+		max-height: 350px;
+	}
+}
+
+.hero-main-container article .entry-content section:not(:first-child) {
+	width: 100%;
+	height: 100vh;
+	max-height: 525px;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-main-container article .entry-content section:not(:first-child) {
+		max-height: 400px;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.hero-main-container article .entry-content section:not(:first-child) {
+		max-height: 300px;
+	}
+}
+
+@media screen and (min-width: 786px) {
+	.hero-main-container article .entry-content {
+		flex-direction: row;
+	}
+	.hero-main-container article .entry-content section:not(:first-child) {
+		width: 50%;
+	}
+}
+
+.hero-main-container article .hero-content-wrapper {
+	color: #ffffff;
+	text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-main-container article .hero-inner-container h2 {
+		font-size: 2.4em !important;
+	}
+}
+
+@media screen and (min-width: 786px) {
+	.hero-main-container article section:first-child .hero-content-wrapper {
+		max-width: 40%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-main-container article section:first-child .hero-content-wrapper {
+		max-width: 70%;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.hero-main-container article .hero-inner-container h2 {
+		font-size: 2em !important;
+	}
+	.hero-main-container article .hero-content-wrapper {
+		max-width: 75%;
+	}
+}
+
+.hero-main-container article a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.hero-main-container article h2 {
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.hero-main-container article .cta-btn {
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px solid white;
+	border-radius: 0;
+	padding: 0.5em 1.5em;
 }
 
 /* Comments

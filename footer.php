@@ -43,7 +43,7 @@
 		?>
     </div><!-- .site-info -->
 
-    <nav aria-label="<?php esc_attr_e('Footer', 'latitude51'); ?>" role="navigation" class="debug footer-menu-wrapper">
+    <nav aria-label="<?php esc_attr_e('Footer', 'latitude51'); ?>" role="navigation" class="footer-menu-wrapper">
 
         <ul class="footer-menu reset-list-style">
             <?php
