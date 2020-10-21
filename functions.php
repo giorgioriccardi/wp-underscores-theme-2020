@@ -57,7 +57,7 @@ if (!function_exists('latitude51_setup')) :
 		// Replace the excerpt [...] with "Read More" btn
 		function latitude51_excerpt_more($more) {
 			global $post;
-		return '<div><button><a class="moretag" href="'. get_permalink($post->ID) . '">' . esc_html__( 'Read more', 'latitude51' ) . '</a></button></div>';
+		return '<div><button class="moretag"><a class="moretag-link" href="'. get_permalink($post->ID) . '">' . esc_html__( 'Read more', 'latitude51' ) . '</a></button></div>';
 		}
 		add_filter('excerpt_more', 'latitude51_excerpt_more');
 		/**
