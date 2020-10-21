@@ -30,21 +30,23 @@ $cta_link = get_field('link');
 <section id="<?php echo $id; ?>" class="hero-section <?php echo $align_class; ?> latitude51-<?php echo $id; ?>"
     style="background-image: url(<?php echo $hero_image; ?>);">
 
-    <!-- Hero Section Title -->
-    <?php if ($title) : ?>
-    <h2><?php echo $title; ?></h2>
-    <?php endif; ?>
+    <div class="hero-inner-container">
+        <!-- Hero Section Title -->
+        <?php if ($title) : ?>
+        <h2><?php echo $title; ?></h2>
+        <?php endif; ?>
 
-    <!-- Hero Section Content -->
-    <?php if ($content) : ?>
-    <div class="hero-content-wrapper">
-        <p><?php echo $content; ?></p>
-    </div>
-    <?php endif; ?>
+        <!-- Hero Section Content -->
+        <?php if ($content) : ?>
+        <div class="hero-content-wrapper">
+            <p><?php echo $content; ?></p>
+        </div>
+        <?php endif; ?>
 
-    <!-- Hero Section CTA -->
-    <?php if ($cta_link) : ?>
-    <button class="cta-btn"><a class="cta-link" href="<?php echo $cta_link['url']; ?>"
-            target="<?php echo $cta_link['target']; ?>"><?php echo $cta_link['title']; ?></a></button>
+        <!-- Hero Section CTA -->
+        <?php if ($cta_link) : ?>
+        <button class="cta-btn"><a class="cta-link" href="<?php echo $cta_link['url']; ?>"
+                target="<?php echo $cta_link['target']; ?>"><?php echo $cta_link['title']; ?></a></button>
+    </div><!-- end .hero-inner-container -->
     <?php endif; ?>
 </section>

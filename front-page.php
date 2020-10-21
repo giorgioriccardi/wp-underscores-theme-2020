@@ -50,6 +50,11 @@ get_header();
     <!-- SSWS: render the news posts -->
     <div class="content-wrapper">
 
+        <div class="fp-cat-title">
+            <h1>News & Events</h1>
+            <hr class="cat-title">
+        </div>
+
         <?php
 	// SSWS
     $the_query = new WP_Query( array(

@@ -54,7 +54,7 @@ html {
 
 body {
 	color: #666666;
-	background-color: #fff;
+	background-color: #f0f0f0;
 }
 
 body ::selection {
@@ -501,7 +501,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #fff;
+	background: #f0f0f0;
 	max-width: 1920px;
 	margin: 0 auto !important;
 }
@@ -679,7 +679,7 @@ textarea {
 --------------------------------------------- */
 .site-header {
 	display: flex;
-	background-color: #fff;
+	background-color: #ffffff;
 	min-height: 4.3em;
 }
 
@@ -817,7 +817,7 @@ textarea {
 }
 
 .menu-toggle[aria-expanded="true"]:before {
-	content: "X";
+	content: "\2715";
 }
 
 button.menu-toggle {
@@ -917,6 +917,37 @@ footer .reset-list-style li:first-child:before {
 	margin: 0 0 1.5em;
 }
 
+.fp-cat-title {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	padding: 5.5em 0;
+	text-align: center;
+}
+
+.fp-cat-title h1 {
+	font-size: 2.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+hr.cat-title {
+	background-color: #ffcc33;
+	height: 6px;
+	margin: 0 auto;
+	width: 8.2em;
+}
+
+@media screen and (max-width: 786px) {
+	.fp-cat-title {
+		padding: 3em 0;
+	}
+	.fp-cat-title h1 {
+		font-size: 2em;
+	}
+}
+
 /* Hero section
 --------------------------------------------- */
 .hero-main-container article {
@@ -936,8 +967,28 @@ footer .reset-list-style li:first-child:before {
 .hero-main-container article .entry-content .hero-section {
 	background-repeat: no-repeat;
 	background-size: cover;
-	max-width: 100%;
-	max-height: 100%;
+}
+
+.hero-main-container article .entry-content .hero-section .hero-inner-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hero-main-container article .entry-content .hero-section .hero-inner-container h2 {
+	font-size: 2.8em;
+	font-weight: bold;
+	margin: 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.hero-main-container article .entry-content .hero-section:first-child .hero-inner-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .hero-main-container article .entry-content section:first-child {
@@ -989,6 +1040,20 @@ footer .reset-list-style li:first-child:before {
 
 .hero-main-container article .hero-content-wrapper {
 	color: #ffffff;
+	max-width: 75%;
+	text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-main-container article .hero-inner-container h2 {
+		font-size: 2.4em !important;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.hero-main-container article .hero-inner-container h2 {
+		font-size: 2em !important;
+	}
 }
 
 .hero-main-container article a {
