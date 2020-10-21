@@ -917,7 +917,12 @@ footer .reset-list-style li:first-child:before {
 	margin: 0 0 1.5em;
 }
 
-.fp-cat-title {
+.content-wrapper {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.content-wrapper .fp-cat-title {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -926,13 +931,13 @@ footer .reset-list-style li:first-child:before {
 	text-align: center;
 }
 
-.fp-cat-title h1 {
+.content-wrapper .fp-cat-title h1 {
 	font-size: 2.8em;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
-hr.cat-title {
+.content-wrapper hr.cat-title {
 	background-color: #ffcc33;
 	height: 6px;
 	margin: 0 auto;
@@ -940,10 +945,10 @@ hr.cat-title {
 }
 
 @media screen and (max-width: 786px) {
-	.fp-cat-title {
+	.content-wrapper .fp-cat-title {
 		padding: 3em 0;
 	}
-	.fp-cat-title h1 {
+	.content-wrapper .fp-cat-title h1 {
 		font-size: 2em;
 	}
 }
