@@ -425,7 +425,7 @@ textarea {
 	line-height: 1.5;
 }
 
-@media screen and (min-width: 787px) {
+@media screen and (min-width: 786px) {
 	body,
 	button,
 	input,
@@ -502,7 +502,7 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
-	max-width: 1921px;
+	max-width: 1920px;
 	margin: 0 auto !important;
 }
 
@@ -733,7 +733,7 @@ textarea {
 	left: auto;
 }
 
-@media screen and (min-width: 787px) {
+@media screen and (min-width: 786px) {
 	.main-navigation ul {
 		margin: 1.5em 0 0 0;
 		line-height: 2;
@@ -943,16 +943,42 @@ footer .reset-list-style li:first-child:before {
 .hero-main-container article .entry-content section:first-child {
 	width: 100%;
 	height: 100vh;
-	max-height: 75%;
+	max-height: 750px;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero-main-container article .entry-content section:first-child {
+		max-height: 500px;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.hero-main-container article .entry-content section:first-child {
+		max-height: 350px;
+	}
 }
 
 .hero-main-container article .entry-content section:not(:first-child) {
 	width: 100%;
+	height: 100vh;
+	max-height: 525px;
 	margin: 0;
 	padding: 0;
 }
 
-@media screen and (min-width: 787px) {
+@media screen and (max-width: 1200px) {
+	.hero-main-container article .entry-content section:not(:first-child) {
+		max-height: 400px;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.hero-main-container article .entry-content section:not(:first-child) {
+		max-height: 300px;
+	}
+}
+
+@media screen and (min-width: 786px) {
 	.hero-main-container article .entry-content {
 		flex-direction: row;
 	}

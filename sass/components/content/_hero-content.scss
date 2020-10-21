@@ -25,13 +25,39 @@
       section:first-child {
         width: 100%;
         height: 100vh;
-        max-height: 75%;
+        max-height: 750px;
+      }
+
+      @media screen and (max-width: $mediaQuery__medium) {
+        section:first-child {
+          max-height: 500px;
+        }
+      }
+
+      @media screen and (max-width: $mediaQuery__small) {
+        section:first-child {
+          max-height: 350px;
+        }
       }
 
       section:not(:first-child) {
         width: 100%;
+        height: 100vh;
+        max-height: 525px;
         margin: 0;
         padding: 0;
+      }
+
+      @media screen and (max-width: $mediaQuery__medium) {
+        section:not(:first-child) {
+          max-height: 400px;
+        }
+      }
+
+      @media screen and (max-width: $mediaQuery__small) {
+        section:not(:first-child) {
+          max-height: 300px;
+        }
       }
     }
 
