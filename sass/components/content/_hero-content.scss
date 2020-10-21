@@ -159,7 +159,7 @@
       color: $color__text-white;
       text-transform: uppercase;
       background-color: $color__transparent;
-      border: 2px solid white;
+      border: 2px solid $color__text-white;
       border-radius: 0;
       padding: 0.5em 1.5em;
     }
