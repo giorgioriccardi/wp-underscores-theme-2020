@@ -18,14 +18,14 @@ get_header();
 <main id="primary" class="site-main">
 
     <!-- SSWS: just render the page template content, which includes the Hero Blocks -->
-    <div class="hero-main-container debug">
+    <div class="hero-main-container">
         <?php
 	if (have_posts()) :
 
 		if (is_home() && !is_front_page()) :
 	?>
         <header>
-            <h1 class="page-title screen-reader-text"><?php // single_post_title(); ?></h1>
+            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
         </header>
 
         <?php

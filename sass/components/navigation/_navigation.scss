@@ -1,7 +1,12 @@
 .site-header {
   display: flex;
   background-color: $color__background-body;
-  max-height: 3.9em;
+  min-height: 4.3em;
+
+  .site-branding {
+    margin-left: 2em;
+    padding: 10px 0;
+  }
 }
 
 .main-navigation {
@@ -73,7 +78,7 @@
   }
 
   a {
-    color: $color__link;
+    color: $color__nav-link;
     font-family: $font__secondary;
     font-size: 0.8em;
     display: block;

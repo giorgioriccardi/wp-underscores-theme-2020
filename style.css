@@ -680,7 +680,12 @@ textarea {
 .site-header {
 	display: flex;
 	background-color: #fff;
-	max-height: 3.9em;
+	min-height: 4.3em;
+}
+
+.site-header .site-branding {
+	margin-left: 2em;
+	padding: 10px 0;
 }
 
 .main-navigation {
@@ -738,7 +743,7 @@ textarea {
 }
 
 .main-navigation a {
-	color: #666666;
+	color: #999999;
 	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 	font-size: 0.8em;
 	display: block;
@@ -908,12 +913,16 @@ footer .reset-list-style li:first-child:before {
 	margin: 0 0 1.5em;
 }
 
-.entry-title {
+/* Hero section
+--------------------------------------------- */
+.hero-main-container article {
+	margin: 0;
+}
+
+.hero-main-container article .entry-title {
 	display: none;
 }
 
-/* Hero section
---------------------------------------------- */
 .hero-main-container article .entry-content {
 	display: flex;
 	flex-direction: column;
@@ -927,6 +936,7 @@ footer .reset-list-style li:first-child:before {
 
 .hero-main-container article .entry-content section:first-child {
 	width: 100%;
+	height: 750px;
 }
 
 .hero-main-container article .entry-content section:not(:first-child) {
