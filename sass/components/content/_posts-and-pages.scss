@@ -23,39 +23,40 @@
 }
 
 // FP News & Events
-.content-wrapper {
-  max-width: 1300px;
+.fp-cat-title {
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-family: $font__secondary;
+  padding: 5.5em 0;
+  text-align: center;
+}
 
+.fp-cat-title h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+hr.cat-title {
+  background-color: $color__site-main;
+  height: 6px;
+  margin: 0 auto;
+  width: 8.2em;
+}
+
+@media screen and (max-width: $mediaQuery__small) {
   .fp-cat-title {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    font-family: $font__secondary;
-    padding: 5.5em 0;
-    text-align: center;
+    padding: 3em 0;
   }
 
   .fp-cat-title h1 {
-    font-size: 2.8em;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 2em;
   }
+}
 
-  hr.cat-title {
-    background-color: $color__site-main;
-    height: 6px;
-    margin: 0 auto;
-    width: 8.2em;
-  }
-
-  @media screen and (max-width: $mediaQuery__small) {
-    .fp-cat-title {
-      padding: 3em 0;
-    }
-
-    .fp-cat-title h1 {
-      font-size: 2em;
-    }
-  }
+.content-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: $color__background-white;
 }

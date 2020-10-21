@@ -48,12 +48,12 @@ get_header();
     </div><!-- end hero-wrapper -->
 
     <!-- SSWS: render the news posts -->
-    <div class="content-wrapper">
+    <div class="fp-cat-title">
+        <h1>News & Events</h1>
+        <hr class="cat-title">
+    </div>
 
-        <div class="fp-cat-title">
-            <h1>News & Events</h1>
-            <hr class="cat-title">
-        </div>
+    <div class="content-wrapper">
 
         <?php
 	// SSWS
@@ -78,7 +78,6 @@ get_header();
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
 			get_template_part('template-parts/content', get_post_type());
-		// get_template_part('template-parts/blocks/content', 'hero');
 
 		endwhile;
 

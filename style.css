@@ -917,12 +917,7 @@ footer .reset-list-style li:first-child:before {
 	margin: 0 0 1.5em;
 }
 
-.content-wrapper {
-	max-width: 1300px;
-	margin: 0 auto;
-}
-
-.content-wrapper .fp-cat-title {
+.fp-cat-title {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -931,13 +926,13 @@ footer .reset-list-style li:first-child:before {
 	text-align: center;
 }
 
-.content-wrapper .fp-cat-title h1 {
+.fp-cat-title h1 {
 	font-size: 2.8em;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
-.content-wrapper hr.cat-title {
+hr.cat-title {
 	background-color: #ffcc33;
 	height: 6px;
 	margin: 0 auto;
@@ -945,12 +940,18 @@ footer .reset-list-style li:first-child:before {
 }
 
 @media screen and (max-width: 786px) {
-	.content-wrapper .fp-cat-title {
+	.fp-cat-title {
 		padding: 3em 0;
 	}
-	.content-wrapper .fp-cat-title h1 {
+	.fp-cat-title h1 {
 		font-size: 2em;
 	}
+}
+
+.content-wrapper {
+	max-width: 1300px;
+	margin: 0 auto;
+	background-color: #ffffff;
 }
 
 /* Hero section
