@@ -903,11 +903,6 @@ footer .reset-list-style li:first-child:before {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
 }
@@ -951,23 +946,106 @@ hr.cat-title {
 .content-wrapper {
 	max-width: 1300px;
 	margin: 0 auto;
-	background-color: #ffffff;
+	padding-bottom: 3em;
 }
 
 .content-wrapper article.post {
 	display: flex;
-	flex-direction: row;
+	flex-direction: row-reverse;
+	max-height: 433px;
+	box-shadow: #fc3 8px 10px;
+	margin-bottom: 3em;
 }
 
 .content-wrapper article.post:nth-of-type(odd) {
-	flex-direction: row-reverse;
+	flex-direction: row;
 }
 
 .content-wrapper article .content-box {
+	background-color: #ffffff;
 	max-width: 650px;
 	display: flex;
 	flex-direction: column;
 	padding: 3em;
+}
+
+.content-wrapper article .content-box .cat-btn {
+	background-color: black;
+	border-radius: 0;
+	font-size: small;
+	padding: 1em 0.7em;
+}
+
+.content-wrapper article .content-box .cat-btn a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.content-wrapper article .content-box .cat-btn a:hover {
+	color: #ffcc33;
+}
+
+.content-wrapper article .content-box .entry-title {
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	font-weight: normal;
+	margin: 0.3em 0;
+}
+
+.content-wrapper article .content-box .entry-meta * {
+	text-decoration: none;
+	color: #666666;
+	font-size: small;
+}
+
+.content-wrapper article .content-box .moretag {
+	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px solid #333333;
+	border-radius: 0;
+	padding: 0.5em 1.5em;
+}
+
+.content-wrapper article .content-box .moretag .moretag-link {
+	text-decoration: none;
+	font-size: 0.85em;
+}
+
+@media screen and (max-width: 1200px) {
+	.content-wrapper .content-wrapper {
+		padding-bottom: 0em;
+	}
+	.content-wrapper article.post {
+		display: flex;
+		flex-direction: column;
+		max-height: inherit;
+		box-shadow: none;
+		margin-bottom: 0em;
+	}
+	.content-wrapper article.post:nth-of-type(odd) {
+		flex-direction: column;
+	}
+	.content-wrapper article .content-box {
+		display: flex;
+		max-width: inherit;
+		padding: 3em;
+	}
+	.content-wrapper article .post-thumbnail img {
+		width: 100%;
+	}
+}
+
+footer#colophon {
+	text-align: center;
+	background: #ffffff;
+	padding: 2em;
+	color: #999999;
+}
+
+footer#colophon * {
+	font-size: small;
 }
 
 /* Hero section
@@ -1117,7 +1195,7 @@ hr.cat-title {
 	color: #ffffff;
 	text-transform: uppercase;
 	background-color: rgba(255, 255, 255, 0);
-	border: 2px solid white;
+	border: 2px solid #ffffff;
 	border-radius: 0;
 	padding: 0.5em 1.5em;
 }
