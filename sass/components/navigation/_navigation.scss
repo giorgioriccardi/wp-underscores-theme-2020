@@ -4,8 +4,12 @@
   min-height: 4.3em;
 
   .site-branding {
-    margin-left: 2em;
+    margin: 0 2em;
     padding: 10px 0;
+
+    .custom-logo-link {
+      display: flex;
+    }
   }
 }
 
@@ -18,11 +22,11 @@
   ul {
     display: none;
     list-style: none;
-    margin: 1.5em 0 0 0;
+    margin: 2em 0 0 0;
     padding-left: 0;
 
     ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      // box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
       top: 100%;
@@ -63,7 +67,7 @@
 
   @media screen and (min-width: $mediaQuery__small) {
     ul {
-      margin: 1em 0 0 0;
+      margin: 1.5em 0 0 0;
       line-height: 2;
     }
   }
@@ -120,7 +124,7 @@
 
     .menu-toggle {
       display: flex;
-      margin-top: 1em;
+      margin-top: 1.5em;
       padding-right: 2em;
     }
 

@@ -238,6 +238,9 @@ function latitude51_scripts()
 
 	wp_enqueue_script('latitude51-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true);
 
+	// SSWS Google Fonts: Oswald / Roboto
+	wp_enqueue_style( 'latitude51-fonts', 'https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap|Roboto:wght@400;700;900&display=swap' );
+
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
