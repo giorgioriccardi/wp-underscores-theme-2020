@@ -728,6 +728,7 @@ textarea {
 @media screen and (min-width: 787px) {
 	.main-navigation ul {
 		margin: 1em 0 0 0;
+		line-height: 2;
 	}
 }
 
@@ -902,12 +903,6 @@ footer .reset-list-style li:first-child:before {
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -919,20 +914,54 @@ footer .reset-list-style li:first-child:before {
 
 /* Hero section
 --------------------------------------------- */
+.hero-main-container article .entry-content {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.hero-main-container article .entry-content .hero-section {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-main-container article .entry-content section:first-child {
+	width: 100%;
+}
+
+.hero-main-container article .entry-content section:not(:first-child) {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 787px) {
+	.hero-main-container article .entry-content {
+		flex-direction: row;
+	}
+	.hero-main-container article .entry-content section:not(:first-child) {
+		width: 50%;
+	}
+}
+
+.hero-main-container article .hero-content-wrapper {
+	color: #ffffff;
+}
+
 .hero-main-container article a {
 	text-decoration: none;
-	color: #fff;
+	color: #ffffff;
 }
 
 .hero-main-container article h2 {
 	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-	color: #fff;
+	color: #ffffff;
 	text-transform: uppercase;
 }
 
 .hero-main-container article .cta-btn {
 	font-family: "Oswald", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-	color: #fff;
+	color: #ffffff;
 	text-transform: uppercase;
 	background-color: rgba(255, 255, 255, 0);
 	border: 2px solid white;

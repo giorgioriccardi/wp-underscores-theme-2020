@@ -27,7 +27,7 @@ $content = get_field('content');
 $cta_link = get_field('link');
 ?>
 
-<section id="<?php echo $id; ?>" class="hero-wrapper <?php echo $align_class; ?> latitude51-<?php echo $id; ?>"
+<section id="<?php echo $id; ?>" class="hero-section <?php echo $align_class; ?> latitude51-<?php echo $id; ?>"
     style="background-image: url(<?php echo $hero_image; ?>);">
 
     <!-- Hero Section Title -->

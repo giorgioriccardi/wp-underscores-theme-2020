@@ -25,12 +25,8 @@ get_header();
 		if (is_home() && !is_front_page()) :
 	?>
         <header>
-            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+            <h1 class="page-title screen-reader-text"><?php // single_post_title(); ?></h1>
         </header>
-
-        <code>
-				<pre class="debug">Hero Section</pre>
-			</code>
 
         <?php
 		endif;
