@@ -28,7 +28,7 @@ $cta_link = get_field('link');
 ?>
 
 <section id="<?php echo $id; ?>" class="hero-section <?php echo $align_class; ?> latitude51-<?php echo $id; ?>"
-    style="background-image: url(<?php echo $hero_image; ?>);">
+    style="background-image: url(<?php echo $hero_image; ?>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
 
     <div class="hero-inner-container">
         <!-- Hero Section Title -->

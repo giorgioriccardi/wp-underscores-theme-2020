@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.5.1" created="2020-10-21 02:32" -->
+	<!-- generator="WordPress/5.5.1" created="2020-10-21 07:27" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Constructex</title>
 	<link>http://constructexlatitude51.local</link>
 	<description></description>
-	<pubDate>Wed, 21 Oct 2020 02:32:37 +0000</pubDate>
+	<pubDate>Wed, 21 Oct 2020 07:27:01 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://constructexlatitude51.local</wp:base_site_url>
@@ -7727,11 +7727,11 @@ Also, verify that the Page does not display a "comments are closed" type message
     "id": "block_5f8def6c26caf",
     "name": "acf\/hero",
     "data": {
-        "hero_image": 1856,
+        "hero_image": 1857,
         "_hero_image": "field_5f8ccf09f0f75",
         "title": "Wooden Framing",
         "_title": "field_5f8bcbed746a5",
-        "content": "Cras quam nunc, porta dictum massa sed, vehicula cursus tellus. Maecenas aliquam mauris at tincidunt rutrum. Donec eleifend ex ac blandit pellentesque.",
+        "content": "Cras quam nunc, porta dictum massa sed, vehicula cursus tellus. Donec eleifend ex ac blandit pellentesque.",
         "_content": "field_5f8bcc0f746a6",
         "link": {
             "title": "read more",
@@ -7748,7 +7748,7 @@ Also, verify that the Page does not display a "comments are closed" type message
     "id": "block_5f8def9626cb0",
     "name": "acf\/hero",
     "data": {
-        "hero_image": 1857,
+        "hero_image": 1856,
         "_hero_image": "field_5f8ccf09f0f75",
         "title": "Brick \/ Stone built",
         "_title": "field_5f8bcbed746a5",
